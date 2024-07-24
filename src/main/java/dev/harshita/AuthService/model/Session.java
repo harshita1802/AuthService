@@ -1,10 +1,7 @@
 package dev.harshita.AuthService.model;
 
 import dev.harshita.AuthService.model.constant.SessionStatus;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +11,7 @@ import java.util.Date;
 @Getter
 @Setter
 public class Session extends BaseModel{
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
     private String token;
     private Date loginTime;

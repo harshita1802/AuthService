@@ -12,7 +12,7 @@ public class RegisterRequestDto {
     private String name;
     private String email;
     private String password;
-//    private UUID roleId;
+    private UUID roleId;
 
     public User toEntity() {
         User user = new User();

@@ -23,6 +23,9 @@ public class UserResponseDto {
         loginResponseDto.setName(user.getName());
         loginResponseDto.setUserId(user.getId());
         loginResponseDto.setRoles(new ArrayList<>());
+        for (Role role:user.getRoles()){
+            loginResponseDto.getRoles().add(role);
+        }
 
         return loginResponseDto;
     }
